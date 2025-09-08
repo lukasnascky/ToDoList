@@ -1,11 +1,7 @@
 import React from 'react';
 import { Checkbox, ListItem, ListItemText } from '@mui/material';
+import type { Task } from './types/Task';
 
-interface Task {
-  id: number;
-  title: string;
-  completed: boolean;
-}
 
 interface TaskItemProps {
   task: Task;

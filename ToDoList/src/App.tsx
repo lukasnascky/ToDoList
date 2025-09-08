@@ -3,12 +3,7 @@ import { Container } from '@mui/material';
 import Header from './components/Header';
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
-
-interface Task {
-  id: number;
-  title: string;
-  completed: boolean;
-}
+import type { Task } from './components/types/Task';
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);

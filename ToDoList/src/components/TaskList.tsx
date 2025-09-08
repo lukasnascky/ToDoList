@@ -1,12 +1,8 @@
 import React from 'react';
 import { List } from '@mui/material';
 import TaskItem from './TaskItem';
+import type { Task } from './types/Task';
 
-interface Task {
-  id: number;
-  title: string;
-  completed: boolean;
-}
 
 interface TaskListProps {
   tasks: Task[];
