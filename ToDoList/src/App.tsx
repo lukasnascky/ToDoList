@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { Container } from '@mui/material';
+import Header from './components/Header';
+import TaskInput from './components/TaskInput';
+import TaskList from './components/TaskList';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+interface Task {
+  id: number;
+  title: string;
+  completed: boolean;
 }
 
-export default App
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  const addTask = (title: string) => {
+    const newTask: Task = {
+      id: Date.now(),
+      title,
+      completed: false
+    };
+    setTasks([...tasks, newTask]);
+  };
+
+  const toggleTask = (id: number) => {
+    setTasks(tasks.map(task =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    ));
+  };
+
+  return (
+    <Container maxWidth="sm" style={{ marginTop: '2rem' }}>
+      <div className="App">
+        <Header/>
+        <TaskInput onAddTask={addTask} />
+      <TaskList tasks={tasks} onToggleTask={toggleTask} />
+      </div>
+    </Container>
+  );
+};
+
+export default App;
