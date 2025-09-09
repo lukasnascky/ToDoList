@@ -9,7 +9,7 @@ The application is entirely client-side and does not persist data between sessio
 - [Technologies Used](#-technologies-used)
 - [Component Structure](#-component-structure)
 - [State Management](#-state-management-usestate)
-- [Typing with TypeScript](#typing-with-typescript)
+- [Typing with TypeScript](#️-)typing-with-typescript
 - [Usage in Components](#usage-in-components)
 
 ---
@@ -102,7 +102,7 @@ This approach keeps the application reactive: whenever the state changes, React 
 
 ---
 
-## Typing with TypeScript
+## ⚛️ Typing with TypeScript
 
 To ensure type safety and consistency across the application, a custom interface was created to represent the structure of a task object. This interface is stored in a dedicated file inside the ``types`` folder.
 
