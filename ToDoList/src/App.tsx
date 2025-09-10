@@ -28,7 +28,7 @@ const App: React.FC = () => {
       <div className="App">
         <Header/>
         <TaskInput onAddTask={addTask} />
-      <TaskList tasks={tasks} onToggleTask={toggleTask} />
+        <TaskList tasks={tasks} onToggleTask={toggleTask} />
       </div>
     </Container>
   );
