@@ -5,6 +5,7 @@ import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
 import type { Task } from './components/types/Task';
 
+
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
